@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registrar Nueva Cita</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Registrar Nueva Cita</h1>
+        <form action="/submit_cita" method="POST">
+            <label for="nombre_paciente">Nombre del Paciente:</label>
+            <input type="text" id="nombre_paciente" name="nombre_paciente" required>
+
+            <label for="nombre_medico">Nombre del Médico:</label>
+            <input type="text" id="nombre_medico" name="nombre_medico" required>
+
+            <label for="fecha_cita">Fecha de la Cita:</label>
+            <input type="date" id="fecha_cita" name="fecha_cita" required>
+
+            <label for="estado">Estado:</label>
+            <select id="estado" name="estado" required>
+                <option value="Pendiente">Pendiente</option>
+                <option value="Atendida">Atendida</option>
+                <option value="Cancelada">Cancelada</option>
+            </select>
+
+            <button type="submit">Cargar Cita</button>
+        </form>
+        <a href="/gestion_citas">
+            <button class="back-button">Volver Atrás</button>
+        </a>
+    </div>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Gestión de camas</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+
+<div class="container">
+    <h1>Liberar cama</h1>
+    <form method="POST" action="/modificar_cama">
+        <label for="cama">Ingrese Nº de cama a liberar:</label>
+        <input type="number" id="cama" name="cama" min="1" max="25" required>
+        <button type="submit">Enviar</button>
+    </form>
+    <a href="/gestion_camas">
+        <button class="back-button">Volver Atras</button>
+    </a>
+</div>
+
+</body>
+</html>

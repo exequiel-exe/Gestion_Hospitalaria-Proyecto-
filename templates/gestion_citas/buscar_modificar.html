@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Gestión de Citas Médicas</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+
+<div class="container">
+    <h1>Buscar cita para modificar</h1>
+    <div class="bu"></div>
+    <form action="/modificar_cita" method="POST">
+        <label for="id_cita">Id de la cita:</label>
+        <input type="number" id="id_cita" name="id_cita" required>
+        <button type="submit">Buscar cita</button>
+    </form>
+    <a href="/gestion_citas">
+        <button class="back-button">Volver Atras</button>
+    </a>
+</div>
+
+</body>
+</html>

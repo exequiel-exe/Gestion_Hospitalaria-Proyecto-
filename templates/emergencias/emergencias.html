@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Emergencias</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+
+<body>
+    <h1>Emergencias</h1>
+    <div class="container">
+
+        <div class="button-container">
+            <a href="/agregar_emergencia">
+                <button>Agregar paciente</button>
+            </a>
+            <a href="/atender_emergencia">
+                <button>Atender</button>
+            </a>
+        </div>      
+        <a href="/">
+            <button class="back-button">Volver Atrás</button>
+        </a>
+       
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión Hospitalaria</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+
+<body>
+    <h1>Gestión Hospitalaria</h1>
+    <div class="container">
+        <div class="button-container">
+            <a href="/gestion_citas">
+                <button class="btn-primary">Gestión de Citas Médicas</button>
+            </a>
+            <a href="/emergencias">
+                <button class="btn-primary">Emergencias</button>
+            </a>
+            <a href="/historial">
+                <button class="btn-primary">Historial de Paciente</button>
+            </a>
+            <a href="/gestion_camas">
+                <button class="btn-primary">Gestión de Camas</button>
+            </a>
+        </div>
+    </div>
+</body>
+
+</html>

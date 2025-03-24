@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Gestión de Citas Médicas</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+
+<body>
+    <h1>Gestión de Citas Médicas</h1>
+    <div class="container">
+        <div class="button-container">
+            <a href="/agregar_cita">
+                <button>Agregar cita</button>
+            </a>
+            <a href="/buscar_modificar">
+                <button>Modificar cita</button>
+            </a>
+            <a href="/buscar_eliminar">
+                <button>Eliminar cita</button>
+            </a>
+        </div>
+        <a href="/">
+            <button class="back-button">Volver Atras</button>
+        </a>
+    </div>
+    <div>
+    </div>
+
+</body>
+
+</html>

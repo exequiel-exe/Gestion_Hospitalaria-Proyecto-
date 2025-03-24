@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modificar Cita</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Modificar datos de la cita ID N° {{ cita['id'] }}</h1>
+        <p>Cita del paciente <strong>{{ cita['nombre_paciente'] }}</strong>
+            con el Dr. <strong>{{ cita['nombre_medico'] }}</strong>,
+            el día <strong>{{ cita['fecha_cita'] }}</strong>,
+            actualmente con estado <strong>{{ cita['estado'] }}</strong>.</p>
+
+        <form method="POST" action="{{ url_for('confirmar_mod_cita') }}">
+            <!-- Campo oculto para el ID -->
+            <input type="hidden" id="id" name="id" value="{{ cita['id'] }}">
+
+            <label for="nombre_paciente">Nombre Paciente:</label>
+            <input type="text" id="nombre_paciente" name="nombre_paciente" value="{{ cita['nombre_paciente'] }}">
+
+            <label for="nombre_medico">Nombre Médico:</label>
+            <input type="text" id="nombre_medico" name="nombre_medico" value="{{ cita['nombre_medico'] }}">
+
+            <label for="fecha_cita">Fecha de Cita:</label>
+            <input type="date" id="fecha_cita" name="fecha_cita" value="{{ cita['fecha_cita'] }}">
+
+            {% if cita['estado'] != 'Atendida' %}
+            <label for="estado">Estado:</label>
+            <select id="estado" name="estado">
+                <option value="Pendiente" {% if cita['estado']=='Pendiente' %}selected{% endif %}>Pendiente</option>
+                <option value="Atendida" {% if cita['estado']=='Atendida' %}selected{% endif %}>Atendida</option>
+                <option value="Cancelada" {% if cita['estado']=='Cancelada' %}selected{% endif %}>Cancelada</option>
+            </select>
+            {% else %}
+            <!-- Campo oculto para enviar el estado aunque no se muestre -->
+            <input type="hidden" id="estado" name="estado" value="{{ cita['estado'] }}">
+            {% endif %}
+
+            <button type="submit">Guardar Cambios</button>
+        </form>
+        <a href="/gestion_citas">
+            <button type="button" class="back-button">Volver Atrás</button>
+        </a>
+    </div>
+    
+</body>
+
+</html>

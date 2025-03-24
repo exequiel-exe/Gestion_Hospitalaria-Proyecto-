@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eliminar Cita</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+
+<body>
+    <h1>Eliminar Cita</h1>
+    <div class="container">
+
+        <!-- Mostrar mensaje de confirmación con detalles -->
+        <p>¿Está seguro de que desea eliminar la siguiente cita?</p>
+        <ul>
+            <li><strong>ID de la Cita:</strong> {{ id_cita }}</li>
+            <li><strong>Paciente:</strong> {{ data['nombre_paciente'] }}</li>
+            <li><strong>Médico:</strong> {{ data['nombre_medico'] }}</li>
+            <li><strong>Fecha:</strong> {{ data['fecha'] }}</li>
+            <li><strong>Estado:</strong> {{ data['estado'] }}</li>
+        </ul>
+
+        <!-- Formulario para confirmar eliminación -->
+        <form method="POST" action="{{ url_for('confirmar_eliminar') }}">
+            <input type="hidden" name="id_cita" value="{{ id_cita }}">
+            <input type="hidden" name="a_eliminar" value="{{ a_eliminar }}">
+            <button type="submit">Confirmar Eliminación</button>
+        </form>
+        <a href="/gestion_citas">
+            <button class="back-button">Volver Atras</button>
+        </a>
+    </div>
+
+  
+    
+</body>
+
+</html>

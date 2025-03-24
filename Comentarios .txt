@@ -1,0 +1,30 @@
+Objetivo
+
+El objetivo de este proyecto es desarrollar un sistema de reservas y servicios en un
+hospital utilizando estructuras de datos. El sistema debe contemplar las siguientes
+características:
+
+1. Gestión de citas médicas:
+ Use una lista para gestionar las citas programadas de los pacientes. Cada cita
+debe contener un identificador, nombre del paciente, nombre del médico, fecha
+y estado (pendiente, atendida, cancelada).
+ Implemente funciones para agregar, modificar y cancelar citas.
+
+2. Atención de pacientes de emergencia:
+ Utilice una cola para gestionar las emergencias médicas. Los pacientes serán
+atendidos en el orden en que lleguen.
+ Desarrolle funciones para agregar nuevos pacientes a la cola y simular la
+atención de un paciente (se elimina de la cola).
+
+3. Historial de pacientes atendidos:
+ Implemente una pila para registrar a los pacientes ya atendidos. Al atender a
+un paciente, debe ser removido de la lista de citas o de la cola de emergencias
+y añadido a la pila.
+ Implemente una función para deshacer la última atención registrada.
+
+4. Asignación de camas de hospitalización:
+ Utilice un árbol binario de búsqueda para gestionar la asignación de camas
+en el hospital, donde cada nodo representa una cama con su número,
+disponibilidad (libre/ocupada), y prioridad (basada en la gravedad del paciente).
+ Implemente funciones para asignar camas según la gravedad del paciente,
+buscar camas libres y listar las camas ocupadas por nivel de gravedad.

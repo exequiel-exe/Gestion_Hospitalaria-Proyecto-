@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Emergencias</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+
+<div class="container">
+    <h1>Ingresar paciente a emergencias</h1>
+    <form action="/submit_emergencia" method="POST">
+        <label for="nombre_paciente">Nombre del Paciente:</label>
+        <input type="text" id="nombre_paciente" name="nombre_paciente" required>
+        <button type="submit">Cargar emergencia</button>
+    </form>
+    <a href="/emergencias">
+        <button class="back-button">Volver Atras</button>
+    </a>
+</div>
+
+</body>
+</html>

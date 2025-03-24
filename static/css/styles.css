@@ -1,0 +1,341 @@
+/* Variables globales */
+:root {
+    --primary-color: #2C7BBF;
+    --secondary-color: #60A5FA;
+    --accent-color: #1D4ED8;
+    --success-color: #059669;
+    --danger-color: #DC2626;
+    --warning-color: #D97706;
+    --background-color: #F3F4F6;
+    --text-color: #1F2937;
+    --border-color: #E5E7EB;
+    --border-radius: 8px;
+    --shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Reset y estilos base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    line-height: 1.5;
+    color: var(--text-color);
+    background-color: var(--background-color);
+    min-height: 100vh;
+    padding: 2rem;
+}
+
+/* Contenedor principal */
+.container {
+    max-width: 1000px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background-color: white;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    min-height: calc(100vh - 4rem);
+}
+
+/* Títulos y texto */
+h1 {
+    color: var(--primary-color);
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 2rem;
+    font-weight: 700;
+}
+
+p {
+    margin-bottom: 1.5rem;
+    font-size: 1.1rem;
+}
+
+strong {
+    color: var(--accent-color);
+    font-weight: 600;
+}
+
+/* Listas */
+ul {
+    list-style: none;
+    margin: 1.5rem 0;
+    padding: 0;
+}
+
+ul li {
+    padding: 1rem;
+    margin-bottom: 1rem;
+    background-color: white;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    border-left: 4px solid var(--primary-color);
+}
+
+/* Detalles de cita */
+ul li strong {
+    display: inline-block;
+    min-width: 120px;
+    color: var(--primary-color);
+}
+
+/* Contenedor de botones principales - ACTUALIZADO */
+.button-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem;
+    margin: 2rem auto;
+    padding: 1rem;
+    max-width: 1000px;
+}
+
+.button-container a {
+    flex: 1 1 calc(50% - 1.5rem);
+    min-width: 200px;
+    max-width: 300px;
+    display: flex;
+}
+
+.button-container button {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+}
+
+/* Botón de volver */
+a:last-child:not(.button-container a) button,
+.back-button {
+    max-width: 200px;
+    margin: 2rem auto;
+}
+
+/* Botones de acción (enviar/volver) */
+form button[type="submit"],
+a:not(.button-container a) button,
+button[onclick] {
+    width: 100%;
+    max-width: 200px;
+    margin: 1rem auto;
+    display: block;
+}
+
+/* Botones */
+button,
+.button-container button,
+form button {
+    width: 100%;
+    height: 60px;
+    padding: 0 1.5rem;
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: white;
+    background-color: var(--primary-color);
+    border: none;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: var(--shadow);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Hover unificado para todos los botones */
+button:hover,
+.button-container button:hover,
+a:last-child button:hover,
+button[type="button"]:hover,
+button[type="submit"]:hover,
+form button:hover {
+    background-color: var(--accent-color);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Enlaces */
+a {
+    text-decoration: none;
+    color: inherit;
+    width: 100%;
+    display: block;
+}
+
+/* Formularios */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+label {
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+    display: block;
+    color: var(--text-color);
+}
+
+input, select {
+    width: 100%;
+    padding: 0.75rem;
+    border: 2px solid var(--border-color);
+    border-radius: var(--border-radius);
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+input:focus, select:focus {
+    outline: none;
+    border-color: var(--primary-color);
+}
+
+input[type="date"] {
+    font-family: inherit;
+}
+
+select {
+    background-color: white;
+    cursor: pointer;
+}
+
+/* Campos ocultos */
+input[type="hidden"] {
+    display: none;
+}
+
+/* Estado de las citas */
+select option[value="Pendiente"] {
+    color: var(--warning-color);
+}
+
+select option[value="Atendida"] {
+    color: var(--success-color);
+}
+
+select option[value="Cancelada"] {
+    color: var(--danger-color);
+}
+
+/* Alertas y mensajes */
+.alert {
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-radius: var(--border-radius);
+    color: white;
+    text-align: center;
+    animation: slideIn 0.3s ease-out;
+}
+
+.alert-success {
+    background-color: var(--success-color);
+}
+
+.alert-danger {
+    background-color: var(--danger-color);
+}
+
+/* Contenedor de botón volver */
+.back-container {
+    margin-top: 2rem;
+    text-align: center;
+}
+
+/* Animaciones */
+@keyframes slideIn {
+    from {
+        transform: translateY(-20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Nueva clase especial para botones de ir hacia atrás */
+.back-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    font-weight: 500;
+    color: white;
+    background-color: var(--secondary-color);
+    border: none;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.back-button:before {
+    content: '←';
+    margin-right: 0.5rem;
+    font-size: 1.2rem;
+}
+
+.back-button:hover {
+    background-color: var(--accent-color);
+}
+
+
+/* Media queries */
+@media (max-width: 768px) {
+    body {
+        padding: 1rem;
+    }
+
+    .container {
+        padding: 1.5rem;
+    }
+
+    h1 {
+        font-size: 2rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .button-container a {
+        flex: 1 1 100%;
+    }
+
+    form {
+        gap: 1rem;
+    }
+
+    ul li {
+        padding: 0.75rem;
+    }
+
+    ul li strong {
+        min-width: 100px;
+    }
+
+    .back-button {
+        font-size: 0.9rem;
+    }
+}
+
+/* Utilidades */
+.text-center {
+    text-align: center;
+}
+
+.mt-4 {
+    margin-top: 1rem;
+}
+
+.mb-4 {
+    margin-bottom: 1rem;
+}
+

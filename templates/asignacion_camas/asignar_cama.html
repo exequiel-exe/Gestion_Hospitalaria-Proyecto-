@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Gestión de camas</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+
+<div class="container">
+    <h1>Asignación de cama</h1>
+    <form method="POST" action="/confirmar_cama">
+        <label for="prioridad">Ingrese el nivel de prioridad del paciente:</label>
+        <select id="prioridad" name="prioridad" required>
+            <option value="" disabled selected>Seleccione una prioridad</option>
+            <option value="1">1 (Prioridad alta)</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5 (Prioridad baja)</option>
+        </select>
+        <button type="submit">Buscar Cama</button>
+    </form>    
+    <a href="/gestion_camas">
+        <button class="back-button">Volver Atras</button>
+    </a>
+</div>
+
+</body>
+</html>
