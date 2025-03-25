@@ -46,7 +46,7 @@ Funciones implementadas:
 
 Asignar una cama según gravedad.
 
-Actualizar cama a disponible
+Actualizar cama a disponible.
 
 🎨 Interfaz gráfica
 Se implementa un menú interactivo para gestionar todas las funciones del sistema.
@@ -55,7 +55,7 @@ La interfaz fue desarrollada con HTML y CSS para proporcionar una experiencia de
 
 📸 Captura de pantalla
 
-![Menú del sistema](https://github.com/exequiel-exe/Gestion_Hospitalaria-Proyecto-/blob/main/images/Captura_de_Menu.png?raw=true)
+![Menú del sistema](https://github.com/exequiel-exe/Gestion_Hospitalaria-Proyecto-/blob/main/images/Captura_de_Menu.png?raw=true) 
 
 
 
@@ -74,3 +74,5 @@ Todas las estructuras de datos fueron implementadas manualmente.
 El sistema almacena datos en archivos para persistencia.
 
 Debe ejecutarse en un entorno con Python 3.8 o superior.
+
+
